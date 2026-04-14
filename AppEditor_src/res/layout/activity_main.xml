@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="#ff3b3b3b" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:background="#ff202020" android:layout_width="fill_parent" android:layout_height="40.0dip" app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/bt_back" android:background="?android:selectableItemBackground" android:padding="10.0dip" android:layout_width="50.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_twotone_arrow_back_24" android:tint="#ffb6b6b6" />
+        <TextView android:textSize="11.0dip" android:textStyle="bold" android:textColor="#ff81d4fa" android:gravity="center" android:id="@id/bt_remove_ad" android:background="?android:selectableItemBackground" android:layout_width="60.0dip" android:layout_height="fill_parent" android:text="@string/remove_ad" />
+        <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/bt_xml" android:background="?android:selectableItemBackground" android:padding="8.0dip" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="40.0dip" android:src="@drawable/xml" android:importantForAccessibility="no" />
+        <ImageView android:id="@id/bt_jump_address" android:background="?selectableItemBackground" android:padding="8.0dip" android:layout_width="50.0dip" android:layout_height="40.0dip" android:src="@drawable/run_to_cursor" android:contentDescription="@string/dialog_hex_view_jump_title" android:tooltipText="@string/dialog_hex_view_jump_title" />
+        <ImageView android:id="@id/bt_setting" android:background="?android:selectableItemBackground" android:padding="10.0dip" android:layout_width="50.0dip" android:layout_height="40.0dip" android:src="@drawable/settings_dark" android:importantForAccessibility="no" />
+    </LinearLayout>
+    <include android:id="@id/group_hex_view" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="40.0dip" app:layout_constraintBottom_toTopOf="@id/bt_split" app:layout_constraintTop_toTopOf="parent" layout="@layout/activity_main_hex_view" />
+    <k3x1n.hex.ui.view.VerticalDragFrameLayout android:id="@id/bt_split" android:layout_width="fill_parent" android:layout_height="30.0dip" app:layout_constraintTop_toTopOf="parent">
+        <HorizontalScrollView android:id="@id/tab_scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:id="@id/tab_list" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <TextView android:gravity="center_vertical" android:id="@id/bt_tab_utf8" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="UTF-8" android:paddingHorizontal="20.0dip" />
+                <FrameLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+                    <TextView android:gravity="center_vertical" android:id="@id/bt_tab_edit" android:background="#30ffffff" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Edit" android:paddingHorizontal="20.0dip" />
+                    <androidx.constraintlayout.utils.widget.ImageFilterView android:layout_gravity="end|center|top" android:id="@id/badge_tab_export" android:visibility="invisible" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_margin="2.0dip" android:src="#ffff0000" app:roundPercent="50.0" />
+                </FrameLayout>
+                <TextView android:gravity="center_vertical" android:id="@id/bt_tab_mark" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Mark" android:paddingHorizontal="20.0dip" />
+                <TextView android:gravity="center_vertical" android:id="@id/bt_tab_inspector" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Inspector" android:paddingHorizontal="20.0dip" />
+                <TextView android:gravity="center_vertical" android:id="@id/bt_tab_compare" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Diff" android:paddingHorizontal="20.0dip" />
+                <TextView android:gravity="center_vertical" android:id="@id/bt_tab_find" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Find" android:paddingHorizontal="20.0dip" />
+                <TextView android:gravity="center_vertical" android:id="@id/bt_tab_inspector2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Inspector2" android:paddingHorizontal="20.0dip" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        <TextView android:textColor="#fffce4ec" android:layout_gravity="end|center" android:id="@id/tv_drag_tip" android:background="@drawable/bg_blue_round" android:padding="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tip_drag_resize" android:layout_marginEnd="4.0dip" />
+    </k3x1n.hex.ui.view.VerticalDragFrameLayout>
+    <include android:id="@id/tab_edit" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/thank_you" app:layout_constraintTop_toBottomOf="@id/bt_split" layout="@layout/activity_main_tab_edit" />
+    <include android:id="@id/tab_utf8" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/thank_you" app:layout_constraintTop_toBottomOf="@id/bt_split" layout="@layout/activity_main_tab_utf8" />
+    <include android:id="@id/tab_inspect" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/thank_you" app:layout_constraintTop_toBottomOf="@id/bt_split" layout="@layout/activity_main_tab_inspect" />
+    <include android:id="@id/tab_mark" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/thank_you" app:layout_constraintTop_toBottomOf="@id/bt_split" layout="@layout/activity_main_tab_mark" />
+    <include android:id="@id/tab_compare" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/thank_you" app:layout_constraintTop_toBottomOf="@id/bt_split" layout="@layout/activity_main_tab_compare" />
+    <include android:id="@id/tab_find" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/thank_you" app:layout_constraintTop_toBottomOf="@id/bt_split" layout="@layout/activity_main_tab_find" />
+    <include android:id="@id/tab_inspect2" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/thank_you" app:layout_constraintTop_toBottomOf="@id/bt_split" layout="@layout/activity_main_tab_inspect2" />
+    <FrameLayout android:id="@id/thank_you" android:background="#ff202020" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="60.0dip" android:elevation="20.0dip" app:layout_constraintBottom_toBottomOf="parent">
+        <View android:background="#ff777777" android:layout_width="fill_parent" android:layout_height="1.0dip" android:elevation="1.0dip" android:layout_marginHorizontal="2.0dip" />
+        <TextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Banner Ad." />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

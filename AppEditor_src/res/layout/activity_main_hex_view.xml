@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="#ff202020" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:ellipsize="start" android:gravity="center_vertical" android:id="@id/bt_file_list" android:background="?selectableItemBackground" android:layout_width="fill_parent" android:layout_height="40.0dip" android:maxLines="1" android:lines="1" android:drawablePadding="10.0dip" android:paddingHorizontal="16.0dip" app:drawableEndCompat="@drawable/baseline_arrow_drop_down_24" app:drawableTint="?android:textColor" app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout android:id="@id/hex_view_parent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="40.0dip" android:layout_marginBottom="20.0dip">
+        <k3x1n.hex.ui.view.HexView android:id="@id/hex_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ProgressBar android:layout_gravity="center" android:id="@id/loading_compare" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <FrameLayout android:layout_gravity="end" android:id="@id/bt_scroll_y" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="40.0dip">
+            <View android:layout_gravity="end" android:background="#ff8c929e" android:layout_width="10.0dip" android:layout_height="fill_parent" />
+        </FrameLayout>
+    </FrameLayout>
+    <include android:id="@id/bottom_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" layout="@layout/bar_selection_info" />
+</androidx.constraintlayout.widget.ConstraintLayout>

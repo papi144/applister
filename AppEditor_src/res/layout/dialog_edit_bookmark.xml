@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <EditText android:gravity="top" android:id="@id/et_content" android:background="#10ffffff" android:padding="4.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:hint="@string/here_input_mark" android:lines="4" android:maxLength="4096" android:scrollbarFadeDuration="-1" />
+    <TextView android:textSize="14.0sp" android:gravity="center_vertical" android:id="@id/bt_change_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/click_here_change_color" android:drawablePadding="6.0dip" app:drawableStartCompat="@drawable/bg_color_tip" />
+</LinearLayout>
